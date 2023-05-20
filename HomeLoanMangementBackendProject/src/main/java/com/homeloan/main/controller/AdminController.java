@@ -22,5 +22,4 @@ public class AdminController {
 		return adminservice.login(adminUsername,adminPassword,adminType);
 	}
 	
-//	just trying to push a newly created branch to repo
 }
