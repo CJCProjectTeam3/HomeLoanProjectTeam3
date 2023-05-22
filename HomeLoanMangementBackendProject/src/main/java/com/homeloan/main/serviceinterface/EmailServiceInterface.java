@@ -9,5 +9,5 @@ public interface EmailServiceInterface
 {
 	public void sendMail(EmailSender e);
 	
-	public SanctionLetter sendSantionLetterMail(ApplicationFormData applicationFormData);
+	//public SanctionLetter sendSantionLetterMail(ApplicationFormData applicationFormData);
 }

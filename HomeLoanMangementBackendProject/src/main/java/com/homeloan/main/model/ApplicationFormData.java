@@ -25,34 +25,41 @@ public class ApplicationFormData {
 	private String applicationStatus;
 	private String gender;
 	private String age;
-	private String address;
 	private double applicantSalary;
 	private double requirdLoanAmmount; 
 	private int cibilScore;
 	private String applicantEmail;
 	
-	@OneToOne (cascade = CascadeType.ALL)
-	private Occupation occupation;
+	@OneToOne(cascade = CascadeType.ALL)
+	private ApplicantAddress applicantAddress;
 	
-	@OneToOne (cascade = CascadeType.ALL)
-	private BankAccountdetails bankAccountDetails;
+	@OneToOne(cascade = CascadeType.ALL)
+    private Occupation occupation;
 	
-	@OneToOne (cascade = CascadeType.ALL)
-	private PersonalDocuments personalDoc;
+	@OneToOne(cascade = CascadeType.ALL)
+	private PersonalDocuments personalDocuments; 
 	
-	@OneToOne (cascade = CascadeType.ALL)
-	private MortgageDocuments mortgageDocument;
+	@OneToOne(cascade = CascadeType.ALL)
+	private MortgageDocuments mortgageDocuments;
 	
-	@OneToOne (cascade = CascadeType.ALL)
-	private GuarantorDetails guarntorDetails;
+	@OneToOne(cascade = CascadeType.ALL)
+	private CurrentLoanDetails currentLoanDetails;
 	
-	@OneToOne (cascade = CascadeType.ALL)
-	private EMIDetails emiDetails;
+	@OneToOne(cascade = CascadeType.ALL)
+	private PropertyInformation propertyInformation;
 	
-// added this 
-	@OneToOne (cascade = CascadeType.ALL)
-	private SanctionLetter applicationsanctionLetter;
+	@OneToOne(cascade = CascadeType.ALL)
+	private GuarantorDetails guarantorDetails;
 	
-
+	@OneToOne(cascade = CascadeType.ALL)
+	private LoanDisbursementInfo loanDisbursementInfo;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	private Ledger ledgerInfo;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	private SanctionLetter sanctionLetter ;
+	
+	
 }
 

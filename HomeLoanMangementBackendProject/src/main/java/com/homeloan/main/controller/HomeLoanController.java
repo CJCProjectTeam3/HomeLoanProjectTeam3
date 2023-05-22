@@ -17,10 +17,6 @@ public class HomeLoanController
 	HomeLoanServiceInterface hi;
 	
 	
-//	public ResponseEntity<BaseResponse<ApplicationFromData>> post()
-//	{
-//		
-//	}
-	
+
 
 }
