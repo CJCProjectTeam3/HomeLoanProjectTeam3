@@ -1,5 +1,6 @@
 package com.homeloan.main.model;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -11,16 +12,18 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Enquiry {
+@Entity
+public class LocalAddress
+{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int enquiryid;
-	private String name;
-	private String address;
-	private String contact;
-	private String email;
-	private String panno;
-	private int age;
-	
+	private int localAddressId;
+	private String areaname;
+	private String cityname;
+	private String district;
+	private String state;
+	private long pincode;
+	private String houseNumber;
+	private String streetName;
 }

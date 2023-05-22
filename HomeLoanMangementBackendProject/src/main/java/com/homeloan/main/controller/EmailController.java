@@ -12,41 +12,45 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.homeloan.main.model.ApplicationFormData;
 import com.homeloan.main.model.EmailSender;
-import com.homeloan.main.model.UserLoginDetails;
 import com.homeloan.main.serviceinterface.EmailServiceInterface;
 import com.homeloan.main.serviceinterface.HomeLoanServiceInterface;
+
+import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @CrossOrigin ("*")
 @RequestMapping ("/mail")
+//@Slf4j
 public class EmailController 
 {
-	@Autowired
-	EmailSender emailsender;
 	
 	@Autowired
 	EmailServiceInterface emailserviceI;
 	
-	@Autowired
-	HomeLoanServiceInterface hl;
+	
 	
 	@Value ("${spring.mail.username}")
 	private String from;
 	
 	@PostMapping ("/sendmail")
-	public ResponseEntity<ApplicationFormData> sendMail(@RequestBody ApplicationFormData afdata)
+	public ResponseEntity<ApplicationFormData> sendMail(@RequestParam String mailString,@RequestParam String applicantName) throws JsonMappingException, JsonProcessingException
 	{
-		System.out.println("cibil score" +afdata.getApplicationStatus());
-		if(afdata.getApplicationStatus().equals("approved"))
-		{
-			emailsender.setFrom(from);
-			emailsender.setTo(afdata.getApplicantEmail());
-			emailsender.setSubject("Regarding Home Loan For Documentation of Applicant name: " + afdata.getApplicantName());
-			emailsender.setMassege("Congratulations! We are pleased to inform you that based on your CIBIL score assessment, you are eligible for a loan with our institution.\n"		      
+		ObjectMapper om=new ObjectMapper();
+		EmailSender mail = om.readValue(mailString, EmailSender.class);
+		
+		mail.setFrom(from);
+		mail.setTo(mail.getTo());
+		mail.setSubject("Regarding Home Loan For Documentation of Applicant name: "+applicantName );
+		mail.setMassege("Congratulations! We are pleased to inform you that based on your CIBIL score assessment, you are eligible for a loan with our institution.\n"		      
 		      		+ "\n We are happy to inform you that your Home Loan request has been approved and is currently being processed.\n"
 		      		+ "Further, we inform you that we have sent an email containing attached documents.\n"
 		      		+ "Also we have sent you the terms and conditions of the loans sanctioned. \n"
@@ -61,46 +65,33 @@ public class EmailController
 		      		+ "6.Bank Passbook Copy \n"		      	
 		      		+ "Thank You Connecting With Us \n\n");
 			
-			emailserviceI.sendMail(emailsender);
+			emailserviceI.sendMail(mail);
 			
 //			ResponseEntity<ApplicationFormData> responseEntity= new ResponseEntity<ApplicationFormData>(200,"Mail Send Successfully for Approved Customer", afdata);
 			
 			return new ResponseEntity<ApplicationFormData>(HttpStatus.OK);
 			
-		}
-		else {
-			emailsender.setFrom(from);
-			emailsender.setTo(afdata.getApplicantEmail());
-			emailsender.setSubject("Regarding Car Loan For Documentation of Applicant name: " + afdata.getApplicantName());
-			emailsender.setMassege("your cibil is Rejected and You are Not Eligible\n"
-	        		+ "For Further Process."
-	        		+ "\n We are Not Happy to inform you that your Home Loan request has been Rejected and is currently being Not Processed.\n"
-	        		+ "Thank You Connecting With Us \n\n");
-			
-			emailserviceI.sendMail(emailsender);
-			
-			return new ResponseEntity<ApplicationFormData>(HttpStatus.OK);			
-		}
+		
 	}
 	
-	@GetMapping ("/sendSanctionLetterMail/{applicationId}")
-	public ResponseEntity<ApplicationFormData> sendSanctionLetterMail(@PathVariable("applicationId") int applicationId) throws Exception
-	{
-		System.out.println("Mail sending started");
-		Optional<ApplicationFormData> applicationformdata = hl.findById(applicationId);
-		
-		ApplicationFormData applicationFormData= applicationformdata.get();
-		if(applicationformdata.isPresent())
-		{
-			emailserviceI.sendSantionLetterMail(applicationFormData);
-		}
-		else {
-			throw new Exception();
-		}
-
-		return new ResponseEntity<ApplicationFormData>(HttpStatus.OK);
-		
-	}
+//	@GetMapping ("/sendSanctionLetterMail/{applicationId}")
+//	public ResponseEntity<ApplicationFormData> sendSanctionLetterMail(@PathVariable("applicationId") int applicationId) throws Exception
+//	{
+//		System.out.println("Mail sending started");
+//		Optional<ApplicationFormData> applicationformdata = hl.findById(applicationId);
+//		
+//		ApplicationFormData applicationFormData= applicationformdata.get();
+//		if(applicationformdata.isPresent())
+//		{
+//			emailserviceI.sendSantionLetterMail(applicationFormData);
+//		}
+//		else {
+//			throw new Exception();
+//		}
+//
+//		return new ResponseEntity<ApplicationFormData>(HttpStatus.OK);
+//		
+//	}
 	
 	
 	
