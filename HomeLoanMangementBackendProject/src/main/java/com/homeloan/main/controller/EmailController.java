@@ -52,10 +52,10 @@ public class EmailController
 		mail.setSubject("Regarding Home Loan For Documentation of Applicant name: "+applicantName );
 		mail.setMassege("Congratulations! We are pleased to inform you that based on your CIBIL score assessment, you are eligible for a loan with our institution.\n"		      
 		      		+ "\n We are happy to inform you that your Home Loan request has been approved and is currently being processed.\n"
-		      		+ "Further, we inform you that we have sent an email containing attached documents.\n"
-		      		+ "Also we have sent you the terms and conditions of the loans sanctioned. \n"
+		      		+ "we would like to inform you that we have sent an email containing all required documents for further process.\n"
+		      		+ "Also we have sent you the terms and conditions of the loan sanctioned. \n"
 		      		+ "We would like to schedule your meeting with the relationship manager of the company for any further information and clarifications that you might wish to know. \n\n"
-		      		+ "We are happy to be working with you. \n\n"
+		      		+ "We are happy to work with you. \n\n"
 		      		+ "List of Documents Required :- \n\n"
 		      		+ "1.Aadhar Card \n"
 		      		+ "2.Pan Card \n"
@@ -63,7 +63,7 @@ public class EmailController
 		      		+ "4.Salary Slips of Last Three Months \n"
 		      		+ "5.Passport Size Photograph \n"
 		      		+ "6.Bank Passbook Copy \n"		      	
-		      		+ "Thank You Connecting With Us \n\n");
+		      		+ "Thank You For Connecting With Us \n\n");
 			
 			emailserviceI.sendMail(mail);
 			

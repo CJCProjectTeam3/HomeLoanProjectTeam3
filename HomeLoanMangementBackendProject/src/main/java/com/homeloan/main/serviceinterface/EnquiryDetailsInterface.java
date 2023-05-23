@@ -1,9 +1,13 @@
 package com.homeloan.main.serviceinterface;
 
-import com.homeloan.main.homeloanRepository.EnquiryDetails;
+import java.util.List;
+
+import com.homeloan.main.model.EnquiryDetails;
 
 public interface EnquiryDetailsInterface {
 
 	EnquiryDetails save(EnquiryDetails enquiryDetails);
+
+	List<EnquiryDetails> getAllData();
 
 }

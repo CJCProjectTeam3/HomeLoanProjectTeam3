@@ -26,7 +26,7 @@ public class ApplicationFormData {
 	private String gender;
 	private String age;
 	private double applicantSalary;
-	private double requirdLoanAmmount; 
+	private long requirdLoanAmmount; 
 	private int cibilScore;
 	private String applicantEmail;
 	
@@ -59,7 +59,4 @@ public class ApplicationFormData {
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	private SanctionLetter sanctionLetter ;
-	
-	
 }
-

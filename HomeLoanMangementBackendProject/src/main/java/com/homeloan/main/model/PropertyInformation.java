@@ -21,14 +21,13 @@ public class PropertyInformation {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int propertyId;
 	private String propertyType;
-	private String propertyArea;
-	private String constructionArea;
+	private double propertyArea;
+	private double constructionArea;
 	private double propertyPrice;
 	private double constructionPrice;
 	private byte[] propertyDocuments;
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	private PropertyAddress propertyAddress;
-
 
 }
