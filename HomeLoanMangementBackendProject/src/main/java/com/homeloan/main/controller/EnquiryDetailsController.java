@@ -29,5 +29,4 @@ public class EnquiryDetailsController {
 		return new ResponseEntity<BaseResponce<EnquiryDetails>>(baseEnuiry,HttpStatus.OK);
 	}
 	
-	
 }
