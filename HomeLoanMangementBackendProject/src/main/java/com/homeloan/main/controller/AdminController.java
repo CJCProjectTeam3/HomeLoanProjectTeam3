@@ -22,6 +22,5 @@ public class AdminController {
 		return adminservice.login(adminUsername,adminPassword,adminType);
 	}
 	
-//	admin controller
-	
+//	admin controller 
 }
