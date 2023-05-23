@@ -1,4 +1,4 @@
-package com.homeloan.main.serviceImp;
+package com.homeloan.main.serviceimpl;
 
 
 import org.springframework.beans.factory.annotation.Autowired;

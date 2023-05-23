@@ -9,10 +9,9 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.HttpServerErrorException;
 
 import com.homeloan.main.baseresponce.BaseResponce;
-import com.homeloan.main.homeloanRepository.EnquiryDetails;
+import com.homeloan.main.model.EnquiryDetails;
 import com.homeloan.main.serviceinterface.EnquiryDetailsInterface;
 
 @RestController

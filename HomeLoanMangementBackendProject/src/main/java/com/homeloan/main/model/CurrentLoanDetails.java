@@ -31,6 +31,6 @@ public class CurrentLoanDetails {
 	private String status;
 	
 	@OneToOne(cascade =CascadeType.ALL )
-	private EMIDetails Emidetails;
+	private EMIDetails emidetails;
 
 }
