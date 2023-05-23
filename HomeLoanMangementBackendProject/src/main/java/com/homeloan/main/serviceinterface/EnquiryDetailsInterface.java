@@ -1,6 +1,6 @@
 package com.homeloan.main.serviceinterface;
 
-import com.homeloan.main.homeloanRepository.EnquiryDetails;
+import com.homeloan.main.model.EnquiryDetails;
 
 public interface EnquiryDetailsInterface {
 

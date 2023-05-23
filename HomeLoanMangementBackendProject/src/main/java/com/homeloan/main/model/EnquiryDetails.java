@@ -1,4 +1,4 @@
-package com.homeloan.main.homeloanRepository;
+package com.homeloan.main.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

@@ -1,4 +1,4 @@
-package com.homeloan.main.serviceImp;
+package com.homeloan.main.serviceimpl;
 
 import java.util.Optional;
 

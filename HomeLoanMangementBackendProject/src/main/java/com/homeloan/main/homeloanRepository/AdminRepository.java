@@ -1,4 +1,4 @@
-package com.homeloan.main.adminrepository;
+package com.homeloan.main.homeloanRepository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
