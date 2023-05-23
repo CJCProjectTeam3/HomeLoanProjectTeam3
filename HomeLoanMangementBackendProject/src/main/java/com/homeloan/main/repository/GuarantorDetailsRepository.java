@@ -8,4 +8,5 @@ import com.homeloan.main.model.GuarantorDetails;
 @Repository
 public interface GuarantorDetailsRepository extends JpaRepository<GuarantorDetails, Integer> {
 
+	
 }

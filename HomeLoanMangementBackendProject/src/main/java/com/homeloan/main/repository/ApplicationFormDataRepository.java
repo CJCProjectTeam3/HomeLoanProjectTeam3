@@ -8,4 +8,5 @@ import com.homeloan.main.model.ApplicationFormData;
 @Repository
 public interface ApplicationFormDataRepository extends JpaRepository<ApplicationFormData, Integer> {
 
+	
 }

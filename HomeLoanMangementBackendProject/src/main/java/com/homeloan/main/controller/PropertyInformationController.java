@@ -31,4 +31,5 @@ public class PropertyInformationController {
 		
 		return new ResponseEntity<BaseResponce<PropertyInformation>>(responce,HttpStatus.OK);
 	}
+	
 }

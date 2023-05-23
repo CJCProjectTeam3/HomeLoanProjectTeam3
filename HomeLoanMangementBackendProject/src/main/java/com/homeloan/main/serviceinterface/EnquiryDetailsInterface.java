@@ -9,5 +9,4 @@ public interface EnquiryDetailsInterface {
 	EnquiryDetails save(EnquiryDetails enquiryDetails);
 
 	List<EnquiryDetails> getAllData();
-
 }

@@ -30,4 +30,5 @@ public class GuarantorDetailsController {
 		
 		return new ResponseEntity<BaseResponce<GuarantorDetails>>(responce,HttpStatus.OK);
 	}
+	
 }

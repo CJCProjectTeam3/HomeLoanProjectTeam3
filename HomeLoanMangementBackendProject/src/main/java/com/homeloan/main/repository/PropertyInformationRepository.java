@@ -7,5 +7,5 @@ import com.homeloan.main.model.PropertyInformation;
 
 @Repository
 public interface PropertyInformationRepository extends JpaRepository<PropertyInformation, Integer> {
-
+	
 }

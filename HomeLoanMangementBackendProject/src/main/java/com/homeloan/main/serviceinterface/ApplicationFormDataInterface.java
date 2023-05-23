@@ -9,5 +9,4 @@ public interface ApplicationFormDataInterface {
 	ApplicationFormData saveApplication(ApplicationFormData a);
 
 	List<ApplicationFormData> getAllData();
-
 }

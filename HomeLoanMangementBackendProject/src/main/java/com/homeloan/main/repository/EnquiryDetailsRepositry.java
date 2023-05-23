@@ -8,4 +8,5 @@ import com.homeloan.main.model.EnquiryDetails;
 @Repository
 public interface EnquiryDetailsRepositry extends JpaRepository<EnquiryDetails, Integer> {
 
+	
 }
