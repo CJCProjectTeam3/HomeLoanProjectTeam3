@@ -1,5 +1,7 @@
 package com.homeloan.main.serviceimpl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,5 +19,11 @@ public class EnquiryDetailsIMPL implements EnquiryDetailsInterface{
 	public EnquiryDetails save(EnquiryDetails enquiryDetails) {
 		
 		return enquiryDetailsRepositry.save(enquiryDetails);
+	}
+
+	@Override
+	public List<EnquiryDetails> getAllEnquiries() {
+		
+		return enquiryDetailsRepositry.findAll();
 	}
 }
