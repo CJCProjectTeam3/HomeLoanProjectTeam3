@@ -23,5 +23,6 @@ public class EnquiryDetails {
 	private int age;
 	private String panNumber;
 	private long contact;
+	private int cibilScore;
 
 }

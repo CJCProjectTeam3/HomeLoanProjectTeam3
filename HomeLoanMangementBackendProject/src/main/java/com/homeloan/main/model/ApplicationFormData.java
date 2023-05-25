@@ -20,45 +20,47 @@ public class ApplicationFormData {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int applicationId;
 	private String applicantName;
+	private String age;
 	private String panNumber;
+	private long contact;//patch
+	
 	private String adharNumber;
 	private String applicationStatus;
 	private String gender;
-	private String age;
 	private double applicantSalary;
 	private double requirdLoanAmmount; 
 	private int cibilScore;
 	private String applicantEmail;
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	private ApplicantAddress applicantAddress;
+	private ApplicantAddress applicantAddress;//RO
 	
 	@OneToOne(cascade = CascadeType.ALL)
-    private Occupation occupation;
+    private Occupation occupation;//RM
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	private PersonalDocuments personalDocuments; 
+	private PersonalDocuments personalDocuments; //RM
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	private MortgageDocuments mortgageDocuments;
+	private MortgageDocuments mortgageDocuments;//IO
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	private CurrentLoanDetails currentLoanDetails;
+	private CurrentLoanDetails currentLoanDetails;//PO
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	private PropertyInformation propertyInformation;
+	private PropertyInformation propertyInformation;//PO
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	private GuarantorDetails guarantorDetails;
+	private GuarantorDetails guarantorDetails;//PO
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	private LoanDisbursementInfo loanDisbursementInfo;
+	private LoanDisbursementInfo loanDisbursementInfo;//DO
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	private Ledger ledgerInfo;
+	private Ledger ledgerInfo;//DO
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	private SanctionLetter sanctionLetter ;
+	private SanctionLetter sanctionLetter ;//DO
 	
 	
 }
